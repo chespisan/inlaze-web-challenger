@@ -1,0 +1,23 @@
+@import "app/styles/variables.scss";
+
+.side-menu {
+  background-color: $color-black;
+  height: calc(100vh - 80px);
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+  visibility: hidden;
+  width: 60%;
+
+  &__list {
+    border-bottom: solid thin $color-gray-light;
+    color: $color-white;
+    font-size: $font-size-sm;
+    list-style-type: none;
+    padding: $padding-20;
+  }
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
