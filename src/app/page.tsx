@@ -2,6 +2,8 @@ import HomePage from "app/pages/home";
 
 const Home = async () => {
   const api = process.env.NEXT_PUBLIC_API_LOCAL;
+  console.log("apiLocal: ", api);
+
   const response = await fetch(`${api}/api`);
   const { movies } = await response.json();
 

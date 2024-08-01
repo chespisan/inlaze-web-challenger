@@ -1,6 +1,8 @@
 export class MoviesService {
   async getPrincipalMovies() {
     try {
+      console.log("Api url: ", process.env.NEXT_PUBLIC_API_URL);
+
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/movies`);
       const movies = response.json();
       return movies;
