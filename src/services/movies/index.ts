@@ -1,7 +1,7 @@
 export class MoviesService {
   async getPrincipalMovies() {
     try {
-      const response = await fetch(`${process.env.API_URL}/movies`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/movies`);
       const movies = response.json();
       return movies;
     } catch (error) {
@@ -11,7 +11,9 @@ export class MoviesService {
 
   async getGenreMovies() {
     try {
-      const response = await fetch(`${process.env.API_URL}/movies/genres`);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/movies/genres`
+      );
       const genres = response.json();
       return genres;
     } catch (error) {
