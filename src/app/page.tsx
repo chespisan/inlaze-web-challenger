@@ -10,14 +10,19 @@ const Home = async () => {
     const { movies } = await response.json();
     console.log("movies: ", movies);
 
-    const responseGenres = await fetch(`${api}/api/genres`);
-    console.log("responseGenres: ", responseGenres);
-    const { genres } = await responseGenres.json();
-    console.log("genres: ", genres);
-    return <HomePage movies={movies} genres={genres} />;
+    // const responseGenres = await fetch(`${api}/api/genres`);
+    // console.log("responseGenres: ", responseGenres);
+    // const { genres } = await responseGenres.json();
+    // console.log("genres: ", genres);
   } catch (error) {
     console.log("error: ", error);
   }
+  // return <HomePage movies={movies} genres={genres} />;
+  return (
+    <div>
+      <h1>Logs Test</h1>
+    </div>
+  );
 };
 
 export default Home;
