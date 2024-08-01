@@ -4,9 +4,9 @@ import styles from "app/components/banner/banner.module.scss";
 
 import { IbannerComponent } from "./interface";
 
-import iconFav from "../../../public/assets/Fav.svg";
-import iconShare from "../../../public/assets/Share.svg";
-import iconBock from "../../../public/assets/book-check.svg";
+import iconFav from "/public/assets/Fav.svg";
+import iconShare from "/public/assets/Share.svg";
+import iconBock from "/public/assets/book-check.svg";
 
 export const BannerComponent = ({
   bannerUrl,

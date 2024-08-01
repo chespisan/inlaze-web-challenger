@@ -7,10 +7,10 @@ import { SideMenuComponent } from "app/components/sideMenu";
 
 import styles from "app/components/header/header.module.scss";
 
-import iconLogo from "../../../public/assets/Logo.svg";
-import iconSign from "../../../public/assets/Signin.svg";
-import iconSun from "../../../public/assets/Sun.svg";
-import iconBurgerMenu from "../../../public/assets/BurgerMenu.svg";
+import iconLogo from "/public/assets/Logo.svg";
+import iconSign from "/public/assets/Signin.svg";
+import iconSun from "/public/assets/Sun.svg";
+import iconBurgerMenu from "/public/assets/BurgerMenu.svg";
 
 export const HeaderComponent = () => {
   const [isShowSide, setIsShowSide] = useState(false);
