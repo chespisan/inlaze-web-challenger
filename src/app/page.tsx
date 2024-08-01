@@ -6,9 +6,11 @@ const Home = async () => {
 
   const response = await fetch(`${api}/api`);
   const { movies } = await response.json();
+  console.log("movies: ", movies);
 
   const responseGenres = await fetch(`${api}/api/genres`);
   const { genres } = await responseGenres.json();
+  console.log("genres: ", genres);
 
   return <HomePage movies={movies} genres={genres} />;
 };
