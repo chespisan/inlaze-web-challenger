@@ -1,0 +1,49 @@
+@import "app/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &__select {
+    background-color: $color-gray-black;
+    color: $color-white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $padding-10;
+  }
+
+  &__bar {
+    height: 1px;
+    width: 70%;
+  }
+
+  &__box {
+    background-color: $color-gray-black;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-out 0.8s;
+  }
+
+  &__box--open {
+    height: 170px;
+    visibility: visible;
+    opacity: 1;
+    padding: $padding-10;
+    overflow-y: scroll;
+  }
+
+  &__list {
+    color: $color-white;
+    cursor: pointer;
+    list-style: none;
+    padding: $padding-5;
+  }
+
+  &__list:hover {
+    background-color: $color-gray-light;
+  }
+}

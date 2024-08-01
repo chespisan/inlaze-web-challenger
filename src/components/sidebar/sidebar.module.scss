@@ -1,0 +1,22 @@
+@import "app/styles/variables.scss";
+@import "app/styles/breackpoints.scss";
+
+.sidebar {
+  display: none;
+  @include sm {
+    display: block;
+    background-color: $color-gray;
+    padding: 0 $padding-10;
+    width: 200px;
+
+    &__box {
+      margin: $margin-30 0;
+    }
+
+    &__label {
+      color: $color-white;
+      font-size: $font-size-xsm;
+      margin-bottom: $margin-10;
+    }
+  }
+}

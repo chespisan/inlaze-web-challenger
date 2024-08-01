@@ -1,0 +1,56 @@
+@import "app/styles/variables.scss";
+@import "app/styles/breackpoints.scss";
+
+.header {
+  background-color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $padding-20;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 999;
+
+  &__menu-list {
+    display: none;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  @include md {
+    .header {
+      &__menu {
+        display: none;
+      }
+
+      &__section {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      &__menu-list {
+        display: flex;
+        gap: 16px;
+      }
+
+      &__list {
+        color: $color-white;
+        display: flex;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  @include lg {
+    .header {
+      &__menu-list {
+        gap: 40px;
+      }
+    }
+  }
+}

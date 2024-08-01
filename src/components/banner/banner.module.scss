@@ -1,0 +1,87 @@
+@import "app/styles/variables.scss";
+@import "app/styles/breackpoints.scss";
+
+.banner {
+  display: none;
+
+  @include sm {
+    display: block;
+    position: relative;
+
+    &__img {
+      height: 320px;
+      width: 100%;
+    }
+
+    &__info {
+      color: $color-white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: $padding-10 $padding-20;
+      position: absolute;
+      bottom: 50px;
+      z-index: 1;
+      text-overflow: ellipsis;
+      width: 70%;
+    }
+
+    &__overview {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+
+    &__footer {
+      height: 140px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 40%, transparent);
+      box-shadow: 0px 3px 4px 0px rgb(0, 0, 0);
+    }
+
+    &__footer-container {
+      color: $color-white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: $padding-15 $padding-20;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &__menu {
+      display: flex;
+      gap: 60px;
+      list-style: none;
+    }
+
+    &__actions {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  @include md {
+    &__img {
+      height: 380px;
+    }
+  }
+
+  @include lg {
+    &__img {
+      height: 360px;
+    }
+  }
+
+  @include xl {
+    &__img {
+      height: 450px;
+    }
+  }
+}

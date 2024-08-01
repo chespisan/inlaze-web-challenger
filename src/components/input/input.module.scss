@@ -1,0 +1,20 @@
+@import "app/styles/variables.scss";
+
+.container {
+  background-color: $color-gray-black;
+  border-radius: $border-radius-5 $border-radius-5 0 0;
+  border-bottom: solid thin $color-white;
+  display: flex;
+  gap: 8px;
+  padding: $padding-10;
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    color: $color-white;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+}
