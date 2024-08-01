@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import styles from "app/components/sidebar/sidebar.module.scss";
 import { InputComponent } from "../input";
@@ -43,10 +43,6 @@ export const SidebarComponent = ({ genres }: ISidebarComponent) => {
   const onChangeInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
-
-  useEffect(() => {
-    console.log("search: ", inputValue);
-  }, [debouncedSearch]);
 
   return (
     <div className={styles.sidebar}>

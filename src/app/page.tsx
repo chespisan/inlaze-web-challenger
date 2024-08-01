@@ -1,4 +1,4 @@
-import { HomePage } from "app/pages/home";
+import HomePage from "app/pages/home";
 
 export default async function Home() {
   const api = process.env.NEXT_PUBLIC_API_LOCAL;

@@ -32,7 +32,7 @@ export const SelectComponent = ({ options }: ISelectComponent) => {
     if (optionSelect) {
       filterBySort(optionSelect.value);
     }
-  }, [optionSelect]);
+  }, [optionSelect, filterBySort]);
 
   return (
     <div className={styles.container}>
