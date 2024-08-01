@@ -1,8 +1,8 @@
-import { MoviesService } from "app/services/movies";
+import { FakeProductsService } from "app/services/fakeProducts";
 
-const moviesService = new MoviesService();
+const fakleProductsService = new FakeProductsService();
 
 export async function GET() {
-  const movies = await moviesService.getPrincipalMovies();
-  return Response.json({ movies });
+  const products = await fakleProductsService.getProducts();
+  return Response.json({ products });
 }

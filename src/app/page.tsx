@@ -1,20 +1,14 @@
 import HomePage from "app/pages/home";
 
 export default async function Home() {
+  const api = process.env.NEXT_PUBLIC_API_LOCAL;
+  let productsFake = [];
+
   try {
-    const api = process.env.NEXT_PUBLIC_API_LOCAL;
-
-    console.log("apiLocal: ", api);
-
     const response = await fetch(`${api}/api`);
-    console.log("response: ", response);
-    const data = await response.json();
-    console.log("movies: ", data);
-
-    // const responseGenres = await fetch(`${api}/api/genres`);
-    // console.log("responseGenres: ", responseGenres);
-    // const { genres } = await responseGenres.json();
-    // console.log("genres: ", genres);
+    const { products } = await response.json();
+    console.log("Products: ", products);
+    productsFake = products;
   } catch (error) {
     console.log("error: ", error);
   }
