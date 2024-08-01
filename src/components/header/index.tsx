@@ -8,7 +8,7 @@ import { SideMenuComponent } from "app/components/sideMenu";
 import styles from "app/components/header/header.module.scss";
 
 import iconLogo from "/public/assets/Logo.svg";
-import iconSign from "/public/assets/Signin.svg";
+import iconSign from "/public/assets/SignIn.svg";
 import iconSun from "/public/assets/Sun.svg";
 import iconBurgerMenu from "/public/assets/BurgerMenu.svg";
 
