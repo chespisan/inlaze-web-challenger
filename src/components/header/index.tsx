@@ -28,7 +28,7 @@ export const HeaderComponent = () => {
 
         <div className={styles.header__section}>
           <Image src={iconLogo} alt="Inlaze - Logo" unoptimized />
-          <ul className={styles.header__actions}>
+          <ul className={styles["header__menu-list"]}>
             <li className={styles.header__list}>Popular</li>
             <li className={styles.header__list}>Now Playing</li>
             <li className={styles.header__list}>Upcoming</li>
@@ -38,7 +38,7 @@ export const HeaderComponent = () => {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.header__actions}>
           <Image src={iconSun} alt="Inlaze - Icon" unoptimized />
           <Image src={iconSign} alt="Inlaze - Icon" unoptimized />
         </div>
