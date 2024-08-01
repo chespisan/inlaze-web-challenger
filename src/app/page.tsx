@@ -6,9 +6,11 @@ export default async function Home() {
 
   try {
     const response = await fetch(`${api}/api`);
-    const { products } = await response.json();
-    console.log("Products: ", products);
-    productsFake = products;
+    console.log("response", response);
+
+    // const { products } = await response.json();
+    // console.log("Products: ", products);
+    // productsFake = products;
   } catch (error) {
     console.log("error: ", error);
   }
