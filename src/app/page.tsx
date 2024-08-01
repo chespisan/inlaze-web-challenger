@@ -5,5 +5,8 @@ export default async function Home() {
   const response = await fetch(`${api}/api`);
   const { movies } = await response.json();
 
-  return <HomePage movies={movies} />;
+  const responseGenres = await fetch(`${api}/api/genres`);
+  const { genres } = await responseGenres.json();
+
+  return <HomePage movies={movies} genres={genres} />;
 }

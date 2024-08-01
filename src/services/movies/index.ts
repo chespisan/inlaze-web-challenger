@@ -8,4 +8,14 @@ export class MoviesService {
       return;
     }
   }
+
+  async getGenreMovies() {
+    try {
+      const response = await fetch(`${process.env.API_URL}/movies/genres`);
+      const genres = response.json();
+      return genres;
+    } catch (error) {
+      return;
+    }
+  }
 }
