@@ -3,8 +3,8 @@
 import { ChangeEvent, useState } from "react";
 
 import styles from "app/components/sidebar/sidebar.module.scss";
-import { InputComponent } from "../input";
 import { useDebouncedValue } from "app/hooks";
+import { InputComponent } from "../input";
 import { SelectComponent } from "../select";
 import { ISidebarComponent } from "./interface";
 

@@ -17,7 +17,7 @@ interface IHomePage {
   genres: Genre[];
 }
 
-export default function HomePage({ genres, movies }: IHomePage) {
+const HomePage = ({ genres, movies }: IHomePage) => {
   const { savePrincipalMovies } = useContext(StoreContext);
   const bannerUrl = `https://image.tmdb.org/t/p/w500/${movies?.top_rated?.results[0]?.backdrop_path}`;
   const title = movies?.top_rated?.results[0]?.title;
@@ -59,4 +59,6 @@ export default function HomePage({ genres, movies }: IHomePage) {
       </div>
     </div>
   );
-}
+};
+
+export default HomePage;
