@@ -3,12 +3,14 @@ export default async function Home() {
   // const api2 = process.env.API_LOCAL;
   console.log("api: ", api);
   // console.log("api2: ", api2);
-  let productsFake = [];
+  let productsFake: any = [];
   try {
     const response = await fetch(`${api}/api`);
-    const { products } = await response.json();
-    console.log("Products: ", products);
-    productsFake = products;
+    console.log("response: ", response);
+
+    const data = await response.json();
+    console.log("Products: ", data);
+    // productsFake = products;
   } catch (error) {
     console.log("error: ", error);
   }
