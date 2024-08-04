@@ -1,27 +1,26 @@
+import HomePage from "app/pages/home";
+
 export default async function Home() {
   const api = process.env.NEXT_PUBLIC_API_LOCAL;
-  // // const api2 = process.env.API_LOCAL;
-  // console.log("api: ", api);
-  // // console.log("api2: ", api2);
-  let productsFake: any = [];
-  // try {
-  //   const response = await fetch(`${api}/api`);
-  //   console.log("response: ", response);
+  // console.log("apiLocal: ", api);
 
-  //   const data = await response.json();
-  //   console.log("Products: ", data);
-  //   // productsFake = products;
+  const response = await fetch(`${api}/api`);
+  // console.log("response: ", response);
+  const { movies } = await response.json();
+  // console.log("movies: ", movies);
+
+  const responseGenres = await fetch(`${api}/api/genres`);
+  // console.log("responseGenres: ", responseGenres);
+  const { genres } = await responseGenres.json();
+  // console.log("genres: ", genres);
+  // try {
   // } catch (error) {
   //   console.log("error: ", error);
   // }
-
-  return (
-    <div>
-      <ul>
-        {productsFake?.map((product: any) => (
-          <li key={product?.id}>{product?.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <HomePage movies={movies} genres={genres} />;
+  // return (
+  //   <div>
+  //     <h1>Logs Test</h1>
+  //   </div>
+  // );
 }
