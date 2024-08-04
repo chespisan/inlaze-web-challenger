@@ -2,7 +2,6 @@
 
 import { useContext, useEffect } from "react";
 
-import { IHomePage } from "app/pages/home/interface";
 import {
   BannerComponent,
   CarouselComponent,
@@ -11,18 +10,24 @@ import {
 
 import styles from "app/pages/home/home.module.scss";
 import { StoreContext } from "app/context/store-provider";
+import { IPrincipalMovies, Genre } from "app/services/movies/interface";
 
-export const HomePage = ({ genres, movies }: IHomePage) => {
+interface IHomePage {
+  movies: IPrincipalMovies;
+  genres: Genre[];
+}
+
+const HomePage = ({ genres, movies }: IHomePage) => {
   const { savePrincipalMovies } = useContext(StoreContext);
-  const bannerUrl = `https://image.tmdb.org/t/p/w500/${movies.top_rated.results[0].backdrop_path}`;
-  const title = movies.top_rated.results[0].title;
-  const overview = movies.top_rated.results[0].overview;
+  const bannerUrl = `https://image.tmdb.org/t/p/w500/${movies?.top_rated?.results[0]?.backdrop_path}`;
+  const title = movies?.top_rated?.results[0]?.title;
+  const overview = movies?.top_rated?.results[0]?.overview;
 
   useEffect(() => {
     if (movies) {
       savePrincipalMovies(movies);
     }
-  }, [movies]);
+  }, [movies, savePrincipalMovies]);
 
   return (
     <div className={styles.container}>
@@ -34,21 +39,26 @@ export const HomePage = ({ genres, movies }: IHomePage) => {
       <div className={styles.container__home}>
         <SidebarComponent genres={genres} />
         <div className={styles.container__content}>
-          <CarouselComponent label="Popular" movies={movies.popular.results} />
+          <CarouselComponent
+            label="Popular"
+            movies={movies?.popular?.results}
+          />
           <CarouselComponent
             label="Now Playing"
-            movies={movies.now_playing.results}
+            movies={movies?.now_playing?.results}
           />
           <CarouselComponent
             label="Upcoming"
-            movies={movies.upcoming.results}
+            movies={movies?.upcoming?.results}
           />
           <CarouselComponent
             label="Top Rated"
-            movies={movies.top_rated.results}
+            movies={movies?.top_rated?.results}
           />
         </div>
       </div>
     </div>
   );
 };
+
+export default HomePage;

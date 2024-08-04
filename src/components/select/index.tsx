@@ -1,4 +1,6 @@
 "use client";
+import { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 
 import {
   IOptionsSelect,
@@ -7,11 +9,10 @@ import {
 
 import styles from "app/components/select/select.module.scss";
 
-import iconArrowDown from "../../../public/assets/arrow-down.svg";
-import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
 import { Genre } from "app/services/movies/interface";
 import { StoreContext } from "app/context/store-provider";
+
+import iconArrowDown from "/public/assets/arrow-down.svg";
 
 export const SelectComponent = ({ options }: ISelectComponent) => {
   const { filterBySort } = useContext(StoreContext);
@@ -31,7 +32,7 @@ export const SelectComponent = ({ options }: ISelectComponent) => {
     if (optionSelect) {
       filterBySort(optionSelect.value);
     }
-  }, [optionSelect]);
+  }, [optionSelect, filterBySort]);
 
   return (
     <div className={styles.container}>
